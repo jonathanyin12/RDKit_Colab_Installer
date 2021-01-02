@@ -19,12 +19,9 @@ def install(
         rdkit_version=None,
         add_python_path=True,
         force=False):
-    """install rdkit from miniconda
-    ```
-    import rdkit_installer
-    rdkit_installer.install()
-    ```
-    """
+    
+    if sys.version_info[0] < 3:
+        file_name="Miniconda2-latest-Linux-x86_64.sh"
 
     python_path = os.path.join(
         conda_path,
